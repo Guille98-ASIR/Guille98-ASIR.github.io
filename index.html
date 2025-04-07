@@ -24,6 +24,26 @@
         </thead>
         <tbody></tbody>
     </table>
+    
+    <!-- Controles de paginación -->
+    <div class="pagination-controls" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            <button id="prev-page" disabled>&laquo; Anterior</button>
+            <span id="page-info">Página 1 de 1 (0 personajes)</span>
+            <button id="next-page" disabled>Siguiente &raquo;</button>
+        </div>
+        <div>
+            <label for="items-per-page">Mostrar:</label>
+            <select id="items-per-page">
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+            </select>
+            <span>por página</span>
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
