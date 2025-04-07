@@ -1,0 +1,86 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f8ff; /* Azul cielo suave */
+    color: #222;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #d72638; /* Rojo pirata */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Estilos para el contenedor de filtros */
+#filter-container {
+    background-color: #fff8e1; /* Beige dorado */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+#filter-container label {
+    font-weight: bold;
+    color: #0d3b66; /* Azul marino */
+}
+
+#filter-container input[type="text"],
+#filter-container select {
+    padding: 10px;
+    border: 1px solid #f4a261;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    background-color: #ffffff;
+}
+
+#filter-container input[type="text"]:focus,
+#filter-container select:focus {
+    border-color: #e76f51; /* Coral oscuro */
+    outline: none;
+    box-shadow: 0 0 5px rgba(231, 111, 81, 0.4);
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+    word-break: break-word;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #0d3b66; /* Azul marino fuerte */
+    color: #ffd166; /* Amarillo dorado */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f1f9ff; /* Azul muy claro */
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: #ffe8d6; /* Color crema */
+}
