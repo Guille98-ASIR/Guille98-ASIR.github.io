@@ -575,7 +575,7 @@
     }
   },
   {
-    "character_id": "55",
+    "character_id": "35",
     "name": "Dracule Mihawk",
     "alias": "Hawk Eyes",
     "status": "Alive",
@@ -589,7 +589,7 @@
     }
   },
   {
-    "character_id": "56",
+    "character_id": "36",
     "name": "Boa Hancock",
     "alias": "Pirate Empress",
     "status": "Alive",
@@ -607,7 +607,7 @@
     }
   },
   {
-    "character_id": "57",
+    "character_id": "37",
     "name": "Donquixote Doflamingo",
     "alias": "Heavenly Yaksha",
     "status": "Alive",
@@ -625,7 +625,7 @@
     }
   },
   {
-    "character_id": "58",
+    "character_id": "38",
     "name": "Trafalgar D. Water Law",
     "alias": "Surgeon of Death",
     "status": "Alive",
@@ -643,7 +643,7 @@
     }
   },
   {
-    "character_id": "59",
+    "character_id": "39",
     "name": "Eustass Kid",
     "alias": "-",
     "status": "Alive",
@@ -661,7 +661,7 @@
     }
   },
   {
-    "character_id": "60",
+    "character_id": "40",
     "name": "Killer",
     "alias": "Massacre Soldier",
     "status": "Alive",
@@ -675,7 +675,7 @@
     }
   },
   {
-    "character_id": "61",
+    "character_id": "41",
     "name": "Urouge",
     "alias": "Mad Monk",
     "status": "Alive",
@@ -689,7 +689,7 @@
     }
   },
   {
-    "character_id": "62",
+    "character_id": "42",
     "name": "X Drake",
     "alias": "-",
     "status": "Alive",
@@ -707,7 +707,7 @@
     }
   },
   {
-    "character_id": "63",
+    "character_id": "43",
     "name": "Scratchmen Apoo",
     "alias": "-",
     "status": "Alive",
@@ -725,7 +725,7 @@
     }
   },
   {
-    "character_id": "64",
+    "character_id": "44",
     "name": "Basil Hawkins",
     "alias": "Magician",
     "status": "Alive",
@@ -743,7 +743,7 @@
     }
   },
   {
-    "character_id": "65",
+    "character_id": "45",
     "name": "Capone Bege",
     "alias": "Gang",
     "status": "Alive",
@@ -761,7 +761,7 @@
     }
   },
   {
-    "character_id": "66",
+    "character_id": "46",
     "name": "Bartolomeo",
     "alias": "Cannibal",
     "status": "Alive",
@@ -779,7 +779,7 @@
     }
   },
   {
-    "character_id": "67",
+    "character_id": "47",
     "name": "Cavendish",
     "alias": "White Horse",
     "status": "Alive",
@@ -793,7 +793,7 @@
     }
   },
   {
-    "character_id": "68",
+    "character_id": "48",
     "name": "Bellamy",
     "alias": "Hyena",
     "status": "Alive",
@@ -811,7 +811,7 @@
     }
   },
   {
-    "character_id": "69",
+    "character_id": "49",
     "name": "Perona",
     "alias": "Ghost Princess",
     "status": "Alive",
@@ -829,7 +829,7 @@
     }
   },
   {
-    "character_id": "70",
+    "character_id": "50",
     "name": "Kuro",
     "alias": "Captain Kuro",
     "status": "Alive",
