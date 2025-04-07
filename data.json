@@ -644,15 +644,15 @@
   },
   {
     "character_id": "39",
-    "name": "Eustass Kid",
+    "name": "Gild Tesoro",
     "alias": "-",
     "status": "Alive",
-    "affiliation": "Kid Pirates",
-    "bounty": "3,000,000,000 Berries",
+    "affiliation": "Gran Tesoro",
+    "bounty": "-",
     "devil_fruit": {
-      "name": "Jiki Jiki no Mi",
+      "name": "Goru Goru no Mi",
       "type": "Paramecia",
-      "abilities": "Magnetism manipulation"
+      "abilities": "Gold manipulation"
     },
     "haki": {
       "observation": true,
