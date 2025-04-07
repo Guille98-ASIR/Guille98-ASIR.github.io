@@ -1,0 +1,399 @@
+[
+    {
+      "character_id": "1",
+      "name": "Monkey D. Luffy",
+      "alias": "Straw Hat Luffy",
+      "status": "Alive",
+      "affiliation": "Straw Hat Pirates",
+      "bounty": "3,000,000,000 Berries",
+      "devil_fruit": {
+        "name": "Gomu Gomu no Mi",
+        "type": "Paramecia",
+        "abilities": "Rubber body"
+      },
+      "haki": {
+        "observation": true,
+        "armament": true,
+        "conquerors": true
+      }
+    },
+    {
+      "character_id": "2",
+      "name": "Roronoa Zoro",
+      "alias": "Pirate Hunter Zoro",
+      "status": "Alive",
+      "affiliation": "Straw Hat Pirates",
+      "bounty": "1,111,000,000 Berries",
+      "devil_fruit": null,
+      "haki": {
+        "observation": true,
+        "armament": true,
+        "conquerors": false
+      }
+    },
+    {
+      "character_id": "3",
+      "name": "Nami",
+      "alias": "Cat Burglar Nami",
+      "status": "Alive",
+      "affiliation": "Straw Hat Pirates",
+      "bounty": "366,000,000 Berries",
+      "devil_fruit": null,
+      "haki": {
+        "observation": true,
+        "armament": false,
+        "conquerors": false
+      }
+    },
+    {
+      "character_id": "4",
+      "name": "Usopp",
+      "alias": "God Usopp",
+      "status": "Alive",
+      "affiliation": "Straw Hat Pirates",
+      "bounty": "200,000,000 Berries",
+      "devil_fruit": null,
+      "haki": {
+        "observation": true,
+        "armament": false,
+        "conquerors": false
+      }
+    },
+    {
+      "character_id": "5",
+      "name": "Vinsmoke Sanji",
+      "alias": "Black Leg Sanji",
+      "status": "Alive",
+      "affiliation": "Straw Hat Pirates",
+      "bounty": "1,032,000,000 Berries",
+      "devil_fruit": null,
+      "haki": {
+        "observation": true,
+        "armament": true,
+        "conquerors": false
+      },
+          "family": "Vinsmoke Family",
+          "cyborg": true
+    },
+    {
+      "character_id": "6",
+      "name": "Tony Tony Chopper",
+      "alias": "Cotton Candy Lover Chopper",
+      "status": "Alive",
+      "affiliation": "Straw Hat Pirates",
+      "bounty": "1,000 Berries",
+      "devil_fruit": {
+        "name": "Hito Hito no Mi",
+        "type": "Zoan",
+        "abilities": "Human-Human Fruit"
+      },
+      "haki": {
+        "observation": false,
+        "armament": false,
+        "conquerors": false
+      }
+    },
+    {
+      "character_id": "7",
+      "name": "Nico Robin",
+      "alias": "Devil Child",
+      "status": "Alive",
+      "affiliation": "Straw Hat Pirates",
+      "bounty": "930,000,000 Berries",
+      "devil_fruit": {
+        "name": "Hana Hana no Mi",
+        "type": "Paramecia",
+        "abilities": "Can replicate and sprout body parts from any surface"
+      },
+      "haki": {
+        "observation": false,
+        "armament": false,
+        "conquerors": false
+      },
+          "known_for": "Reading Poneglyphs"
+    },
+    {
+      "character_id": "8",
+      "name": "Franky",
+      "alias": "Cyborg Franky",
+      "status": "Alive",
+      "affiliation": "Straw Hat Pirates",
+      "bounty": "394,000,000 Berries",
+      "devil_fruit": null,
+      "haki": {
+        "observation": false,
+        "armament": false,
+        "conquerors": false
+      },
+          "occupation": "Shipwright"
+    },
+    {
+      "character_id": "9",
+      "name": "Brook",
+      "alias": "Soul King Brook",
+      "status": "Alive",
+      "affiliation": "Straw Hat Pirates",
+      "bounty": "383,000,000 Berries",
+      "devil_fruit": {
+        "name": "Yomi Yomi no Mi",
+        "type": "Paramecia",
+        "abilities": "Grants a second life"
+      },
+      "haki": {
+        "observation": false,
+        "armament": false,
+        "conquerors": false
+      },
+          "race": "Skeleton"
+    },
+    {
+      "character_id": "10",
+      "name": "Jimbei",
+      "alias": "Knight of the Sea",
+      "status": "Alive",
+      "affiliation": "Straw Hat Pirates",
+      "bounty": "1,100,000,000 Berries",
+      "devil_fruit": null,
+      "haki": {
+        "observation": true,
+        "armament": true,
+        "conquerors": false
+      },
+          "race": "Fish-Man",
+          "fighting_style": "Fish-Man Karate"
+    },
+    {
+      "character_id": "11",
+      "name": "Trafalgar Law",
+      "alias": "Surgeon of Death",
+      "status": "Alive",
+      "affiliation": "Heart Pirates",
+      "bounty": "3,000,000,000 Berries",
+      "devil_fruit": {
+        "name": "Ope Ope no Mi",
+        "type": "Paramecia",
+        "abilities": "Creates a space where he has complete control"
+      },
+      "haki": {
+        "observation": true,
+        "armament": true,
+        "conquerors": false
+      }
+    },
+    {
+      "character_id": "12",
+      "name": "Eustass Kid",
+      "alias": "Captain Kid",
+      "status": "Alive",
+      "affiliation": "Kid Pirates",
+      "bounty": "3,000,000,000 Berries",
+      "devil_fruit": {
+        "name": "Jiki Jiki no Mi",
+        "type": "Paramecia",
+        "abilities": "Attracts and repels metal"
+      },
+      "haki": {
+        "observation": true,
+        "armament": true,
+        "conquerors": true
+      }
+    },
+    {
+      "character_id": "13",
+      "name": "Marshall D. Teach",
+      "alias": "Blackbeard",
+      "status": "Alive",
+      "affiliation": "Blackbeard Pirates",
+      "bounty": null,
+      "devil_fruit": 
+        {
+          "name": "Yami Yami no Mi",
+          "type": "Logia",
+          "abilities": "Darkness"
+        },
+      "haki": {
+        "observation": false,
+        "armament": true,
+        "conquerors": true
+      }
+    },
+    {
+      "character_id": "14",
+      "name": "Shanks",
+      "alias": "Red-Haired Shanks",
+      "status": "Alive",
+      "affiliation": "Red Hair Pirates",
+      "bounty": null,
+      "devil_fruit": null,
+      "haki": {
+        "observation": true,
+        "armament": true,
+        "conquerors": true
+      }
+    },
+    {
+      "character_id": "15",
+      "name": "Charlotte Katakuri",
+      "alias": null,
+      "status": "Alive",
+      "affiliation": "Big Mom Pirates",
+      "bounty": "1,057,000,000 Berries",
+      "devil_fruit": {
+        "name": "Mochi Mochi no Mi",
+        "type": "Special Paramecia",
+        "abilities": "Mochi"
+      },
+      "haki": {
+        "observation": true,
+        "armament": true,
+        "conquerors": true
+      }
+    },
+    {
+      "character_id": "16",
+      "name": "Silvers Rayleigh",
+      "alias": "Dark King",
+      "status": "Alive",
+      "affiliation": "Pirate King's Crew",
+      "bounty": null,
+      "devil_fruit": null,
+      "haki": {
+        "observation": true,
+        "armament": true,
+        "conquerors": true
+      }
+    },
+    {
+      "character_id": "17",
+      "name": "Marco",
+      "alias": "Marco the Phoenix",
+      "status": "Alive",
+      "affiliation": "Whitebeard Pirates",
+      "bounty": null,
+      "devil_fruit": {
+        "name": "Tori Tori no Mi, Model: Phoenix",
+        "type": "Mythical Zoan",
+        "abilities": "Phoenix"
+      },
+      "haki": {
+        "observation": true,
+        "armament": true,
+        "conquerors": false
+      }
+    },
+    {
+      "character_id": "18",
+      "name": "Dracule Mihawk",
+      "alias": "Hawkeyes Mihawk",
+      "status": "Alive",
+      "affiliation": "Former Shichibukai",
+      "bounty": null,
+      "devil_fruit": null,
+      "haki": {
+        "observation": true,
+        "armament": true,
+        "conquerors": false
+      }
+    },
+    {
+      "character_id": "19",
+      "name": "Boa Hancock",
+      "alias": "Pirate Empress",
+      "status": "Alive",
+      "affiliation": "Kuja Pirates, Former Shichibukai",
+      "bounty": null,
+      "devil_fruit": {
+        "name": "Mero Mero no Mi",
+        "type": "Paramecia",
+        "abilities": "Turns people to stone with affection"
+      },
+      "haki": {
+        "observation": true,
+        "armament": true,
+        "conquerors": true
+      }
+    },
+    {
+      "character_id": "20",
+      "name": "Donquixote Doflamingo",
+      "alias": "Heavenly Demon",
+      "status": "Imprisoned",
+      "affiliation": "Former Shichibukai, Donquixote Pirates",
+      "bounty": null,
+      "devil_fruit": {
+        "name": "Ito Ito no Mi",
+        "type": "Paramecia",
+        "abilities": "String manipulation"
+      },
+      "haki": {
+        "observation": true,
+        "armament": true,
+        "conquerors": true
+      }
+    },
+      {
+        "character_id": "21",
+        "name": "Douglas Bullet",
+        "alias": "Demon Heir",
+        "status": "Alive",
+        "affiliation": "Ex-Roger Pirates",
+        "bounty": "-",
+        "devil_fruit": {
+          "name": "Gasha Gasha no Mi",
+          "type": "Paramecia",
+          "abilities": "Fusionar objetos para crear estructuras gigantes"
+        },
+        "haki": {
+          "observation": true,
+          "armament": true,
+          "conquerors": true
+        }
+      },
+      {
+        "character_id": "22",
+        "name": "Bear King",
+        "alias": "-",
+        "status": "Alive",
+        "affiliation": "Trump Siblings",
+        "bounty": "-",
+        "devil_fruit": {
+          "name": null,
+          "type": null,
+          "abilities": null
+        },
+        "haki": {
+          "observation": false,
+          "armament": false,
+          "conquerors": false
+        }
+      },
+      {
+        "character_id": "23",
+        "name": "Salome",
+        "alias": "-",
+        "status": "Alive",
+        "affiliation": null,
+        "bounty": "-",
+        "devil_fruit": null,
+        "haki": {
+          "observation": false,
+          "armament": false,
+          "conquerors": false
+        }
+      },
+      {
+        "character_id": "24",
+        "name": "Annie",
+        "alias": "-",
+        "status": "Alive",
+        "affiliation": null,
+        "bounty": "-",
+        "devil_fruit": null,
+        "haki": {
+          "observation": false,
+          "armament": false,
+          "conquerors": false
+        }
+      }
+  ]
+  
