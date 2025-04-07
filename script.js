@@ -7,7 +7,16 @@ const tbody = tabla.querySelector('tbody');
 const nameFilterInput = document.getElementById('name-filter');
 const affiliationFilterSelect = document.getElementById('affiliation-filter');
 
+// Referencia a los controles de paginación
+const prevPageBtn = document.getElementById('prev-page');
+const nextPageBtn = document.getElementById('next-page');
+const pageInfo = document.getElementById('page-info');
+const itemsPerPageSelect = document.getElementById('items-per-page');
+
 let onePieceData = []; // Variable para almacenar los datos originales
+let datosFiltrados = []; // Variable para almacenar los datos filtrados
+let currentPage = 1;
+let itemsPerPage = 10; // Por defecto, 10 elementos por página
 
 // Función para limpiar valores nulos o indefinidos
 function limpiarJSON(datos) {
@@ -26,7 +35,7 @@ function limpiarJSON(datos) {
     });
 }
 
-// Función para llenar la tabla con los datos
+// Función para llenar la tabla con los datos paginados
 function llenarTabla(datos) {
     // Limpiar la tabla antes de volver a llenarla
     thead.innerHTML = '';
@@ -34,6 +43,7 @@ function llenarTabla(datos) {
 
     if (datos.length === 0) {
         console.log('No data to display');
+        actualizarInfoPaginacion();
         return;
     }
 
@@ -45,8 +55,13 @@ function llenarTabla(datos) {
         thead.appendChild(th);
     });
 
-    // Llenar el cuerpo de la tabla
-    datos.forEach(item => {
+    // Calcular índices para paginación
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = Math.min(startIndex + itemsPerPage, datos.length);
+    const paginatedData = datos.slice(startIndex, endIndex);
+
+    // Llenar el cuerpo de la tabla con los datos paginados
+    paginatedData.forEach(item => {
         const fila = document.createElement('tr');
         claves.forEach(clave => {
             const celda = document.createElement('td');
@@ -77,6 +92,34 @@ function llenarTabla(datos) {
         });
         tbody.appendChild(fila);
     });
+
+    // Actualizar información de paginación
+    actualizarInfoPaginacion();
+}
+
+// Función para actualizar la información de paginación
+function actualizarInfoPaginacion() {
+    const totalItems = datosFiltrados.length;
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+    
+    pageInfo.textContent = `Página ${currentPage} de ${totalPages} (${totalItems} personajes)`;
+    
+    // Desactivar/activar botones de paginación según corresponda
+    prevPageBtn.disabled = currentPage === 1;
+    nextPageBtn.disabled = currentPage === totalPages || totalPages === 0;
+}
+
+// Función para cambiar de página
+function cambiarPagina(direccion) {
+    const totalPages = Math.ceil(datosFiltrados.length / itemsPerPage);
+    
+    if (direccion === 'prev' && currentPage > 1) {
+        currentPage--;
+    } else if (direccion === 'next' && currentPage < totalPages) {
+        currentPage++;
+    }
+    
+    llenarTabla(datosFiltrados);
 }
 
 // Función para filtrar los datos
@@ -84,7 +127,7 @@ function filtrarDatos() {
     const nameFilterValue = nameFilterInput.value.toLowerCase();
     const affiliationFilterValue = affiliationFilterSelect.value;
 
-    let datosFiltrados = onePieceData.filter(item => {
+    datosFiltrados = onePieceData.filter(item => {
         const nombre = item.name.toLowerCase();
         const afiliacion = item.affiliation;
 
@@ -94,6 +137,15 @@ function filtrarDatos() {
         return nameCondition && affiliationCondition;
     });
 
+    // Reiniciar a la primera página cuando se aplica un filtro
+    currentPage = 1;
+    llenarTabla(datosFiltrados);
+}
+
+// Función para cambiar el número de items por página
+function cambiarItemsPorPagina() {
+    itemsPerPage = parseInt(itemsPerPageSelect.value);
+    currentPage = 1; // Volver a la primera página
     llenarTabla(datosFiltrados);
 }
 
@@ -108,11 +160,17 @@ fetch('data.json')
     .then(data => {
         const datosLimpios = limpiarJSON(data);
         onePieceData = datosLimpios; // Guardar los datos originales
-        llenarTabla(datosLimpios);
-
-        // Obtener todas las afiliaciones únicas
-        const uniqueAffiliations = [...new Set(datosLimpios.map(item => item.affiliation))];
-
+        datosFiltrados = datosLimpios; // Inicialmente los datos filtrados son iguales a los originales
+        
+        // Obtener todas las afiliaciones únicas y ordenarlas alfabéticamente
+        const uniqueAffiliations = [...new Set(datosLimpios
+            .map(item => item.affiliation)
+            .filter(affiliation => affiliation !== null && affiliation !== ""))]
+            .sort();
+        
+        // Limpiar el select de afiliaciones antes de llenarlo
+        affiliationFilterSelect.innerHTML = '<option value="">Todas las afiliaciones</option>';
+        
         // Llenar el select de afiliaciones
         uniqueAffiliations.forEach(affiliation => {
             const option = document.createElement('option');
@@ -121,8 +179,16 @@ fetch('data.json')
             affiliationFilterSelect.appendChild(option);
         });
 
+        // Llenar la tabla inicialmente
+        llenarTabla(datosLimpios);
+
         // Agregar event listeners a los filtros
         nameFilterInput.addEventListener('input', filtrarDatos);
         affiliationFilterSelect.addEventListener('change', filtrarDatos);
+        
+        // Agregar event listeners a los controles de paginación
+        prevPageBtn.addEventListener('click', () => cambiarPagina('prev'));
+        nextPageBtn.addEventListener('click', () => cambiarPagina('next'));
+        itemsPerPageSelect.addEventListener('change', cambiarItemsPorPagina);
     })
     .catch(error => console.error('Error al cargar o procesar el JSON:', error));
