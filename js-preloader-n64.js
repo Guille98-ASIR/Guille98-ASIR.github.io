@@ -1,3 +1,11 @@
+    
+document.getElementById('themeToggle').addEventListener('click', () => {
+    const body = document.body;
+    body.classList.toggle('dark-mode');
+    const button = document.getElementById('themeToggle');
+    button.textContent = body.classList.contains('dark-mode') ? 'Modo Claro ☀️' : 'Modo Oscuro 🌙';
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     let juegosOriginales = [];
     let juegosFiltrados = [];
