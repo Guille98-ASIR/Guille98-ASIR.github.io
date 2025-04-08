@@ -1,0 +1,349 @@
+/* Paleta de colores Nintendo 64 */
+:root {
+    --nintendo-red: #e4000f;
+    --nintendo-blue: #0049a1;
+    --nintendo-yellow: #ffc100;
+    --nintendo-green: #00872b;
+    --nintendo-black: #212121;
+    --nintendo-gray: #d1d1d1;
+    --nintendo-dark-blue: #003366;
+    --nintendo-light-blue: #7eb7dd;
+    --nintendo-bg: #f7f7f7;
+    --nintendo-accent: #ff7d00;
+    --nintendo-purple: #623CE4;
+    --nintendo-charcoal: #2A2F4F;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--nintendo-bg);
+    color: var(--nintendo-black);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--nintendo-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out;
+}
+
+.n64-console {
+    position: relative;
+    width: 150px;
+    height: 100px;
+    margin-bottom: 30px;
+}
+
+.console-base {
+    position: absolute;
+    width: 150px;
+    height: 70px;
+    background-color: var(--nintendo-charcoal);
+    border-radius: 10px;
+    bottom: 0;
+}
+
+.controller-port {
+    position: absolute;
+    width: 20px;
+    height: 15px;
+    background-color: var(--nintendo-black);
+    border-radius: 3px;
+    bottom: 10px;
+}
+
+.controller-port:first-of-type {
+    left: 30px;
+}
+
+.controller-port:last-of-type {
+    left: 60px;
+}
+
+.power-light {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--nintendo-red);
+    border-radius: 50%;
+    bottom: 40px;
+    right: 30px;
+    animation: blink 1s infinite alternate;
+}
+
+.cartridge {
+    position: absolute;
+    width: 80px;
+    height: 60px;
+    background-color: var(--nintendo-gray);
+    border-radius: 5px 5px 0 0;
+    top: 0;
+    left: 35px;
+    animation: insert-cartridge 2s infinite;
+}
+
+.cart-label {
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    background-color: var(--nintendo-yellow);
+    border-radius: 3px;
+    top: 5px;
+    left: 10px;
+}
+
+.loading-text {
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 20px;
+}
+
+.loading-dots {
+    animation: dots 1.5s infinite steps(4, end);
+    display: inline-block;
+    width: 20px;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 15px var(--nintendo-red);
+    }
+}
+
+@keyframes insert-cartridge {
+    0%, 100% {
+        transform: translateY(-15px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes dots {
+    0%, 20% {
+        content: ".";
+        opacity: 0;
+    }
+    40% {
+        content: "..";
+        opacity: 0.33;
+    }
+    60% {
+        content: "...";
+        opacity: 0.66;
+    }
+    80%, 100% {
+        content: "...";
+        opacity: 1;
+    }
+}
+
+/* Contenedor principal centrado */
+.contenedor-central {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: var(--nintendo-red);
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* Tabla con estilo Nintendo */
+#tabla-juegos {
+    width: 100%;
+    background: white;
+    border-collapse: collapse;
+    margin: 20px auto;
+    border: 2px solid var(--nintendo-dark-blue);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th {
+    background: var(--nintendo-dark-blue);
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+td {
+    color: var(--nintendo-black);
+    border-bottom: 1px solid var(--nintendo-gray);
+    padding: 12px;
+    text-align: left;
+    position: relative;
+}
+
+tr:hover {
+    background: var(--nintendo-light-blue);
+    transition: background-color 0.2s ease;
+}
+
+/* Controles con estilo Nintendo */
+.controles {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+#buscador {
+    flex: 1 1 300px;
+    max-width: 500px;
+    background: white;
+    color: var(--nintendo-black);
+    border: 2px solid var(--nintendo-blue);
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 16px;
+}
+
+#filas-pagina {
+    background: white;
+    color: var(--nintendo-black);
+    border: 2px solid var(--nintendo-blue);
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Paginación con estilo Nintendo */
+#paginacion {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+    padding: 15px;
+}
+
+#paginacion button {
+    background: var(--nintendo-red);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    min-width: 100px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#paginacion button:hover {
+    background: #ff3333;
+}
+
+#paginacion button:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+}
+
+#contador-pagina {
+    display: flex;
+    align-items: center;
+    color: var(--nintendo-black);
+    font-weight: 500;
+}
+
+/* Ficha de juego */
+#ficha-juego {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px solid var(--nintendo-blue);
+    border-radius: 10px;
+    background-color: white;
+    color: var(--nintendo-black);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#ficha-juego h2 {
+    color: var(--nintendo-red);
+    margin-top: 0;
+    border-bottom: 2px solid var(--nintendo-yellow);
+    padding-bottom: 10px;
+}
+
+/* Logo N64 */
+.logo-container {
+    background-color: var(--nintendo-dark-blue);
+    width: 100%;
+    padding: 15px 0;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.n64-color-dots {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.color-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.dot-red {
+    background-color: var(--nintendo-red);
+}
+
+.dot-blue {
+    background-color: var(--nintendo-blue);
+}
+
+.dot-green {
+    background-color: var(--nintendo-green);
+}
+
+.dot-yellow {
+    background-color: var(--nintendo-yellow);
+}
