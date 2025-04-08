@@ -1,0 +1,404 @@
+{
+  "juegos": [
+    {
+      "id": 1,
+      "titulo": "Super Mario 64",
+      "anio": 1996,
+      "genero": "Plataformas 3D",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo"
+    },
+    {
+      "id": 2,
+      "titulo": "The Legend of Zelda: Ocarina of Time",
+      "anio": 1998,
+      "genero": "Aventura",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo"
+    },
+    {
+      "id": 3,
+      "titulo": "Mario Kart 64",
+      "anio": 1996,
+      "genero": "Carreras",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo"
+    },
+    {
+      "id": 4,
+      "titulo": "GoldenEye 007",
+      "anio": 1997,
+      "genero": "Disparos",
+      "idioma": "Multi/ES",
+      "desarrollador": "Rare"
+    },
+    {
+      "id": 5,
+      "titulo": "Banjo-Kazooie",
+      "anio": 1998,
+      "genero": "Plataformas 3D",
+      "idioma": "Multi/ES",
+      "desarrollador": "Rare"
+    },
+    {
+      "id": 6,
+      "titulo": "Diddy Kong Racing",
+      "anio": 1997,
+      "genero": "Carreras",
+      "idioma": "Multi/ES",
+      "desarrollador": "Rare"
+    },
+    {
+      "id": 7,
+      "titulo": "Star Fox 64",
+      "anio": 1997,
+      "genero": "Disparos",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo"
+    },
+    {
+      "id": 8,
+      "titulo": "The Legend of Zelda: Majora's Mask",
+      "anio": 2000,
+      "genero": "Aventura",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo"
+    },
+    {
+      "id": 9,
+      "titulo": "Perfect Dark",
+      "anio": 2000,
+      "genero": "Disparos",
+      "idioma": "Multi/ES",
+      "desarrollador": "Rare"
+    },
+    {
+      "id": 10,
+      "titulo": "Donkey Kong 64",
+      "anio": 1999,
+      "genero": "Plataformas 3D",
+      "idioma": "Multi/ES",
+      "desarrollador": "Rare"
+    },
+    {
+      "id": 11,
+      "titulo": "Banjo-Tooie",
+      "anio": 2000,
+      "genero": "Plataformas 3D",
+      "idioma": "Multi/ES",
+      "desarrollador": "Rare"
+    },
+    {
+      "id": 12,
+      "titulo": "Conker's Bad Fur Day",
+      "anio": 2001,
+      "genero": "Plataformas 3D",
+      "idioma": "Multi/ES",
+      "desarrollador": "Rare"
+    },
+    {
+      "id": 13,
+      "titulo": "Mario Party",
+      "anio": 1998,
+      "genero": "Minijuegos",
+      "idioma": "Multi/ES",
+      "desarrollador": "Hudson Soft"
+    },
+    {
+      "id": 14,
+      "titulo": "Mario Party 2",
+      "anio": 1999,
+      "genero": "Minijuegos",
+      "idioma": "Multi/ES",
+      "desarrollador": "Hudson Soft"
+    },
+    {
+      "id": 15,
+      "titulo": "Mario Party 3",
+      "anio": 2000,
+      "genero": "Minijuegos",
+      "idioma": "Multi/ES",
+      "desarrollador": "Hudson Soft"
+    },
+    {
+      "id": 16,
+      "titulo": "Paper Mario",
+      "anio": 2000,
+      "genero": "RPG",
+      "idioma": "Multi/ES",
+      "desarrollador": "Intelligent Systems"
+    },
+    {
+      "id": 17,
+      "titulo": "Pokémon Stadium",
+      "anio": 1999,
+      "genero": "RPG",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo"
+    },
+    {
+      "id": 18,
+      "titulo": "Pokémon Stadium 2",
+      "anio": 2000,
+      "genero": "RPG",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo"
+    },
+    {
+      "id": 19,
+      "titulo": "F-Zero X",
+      "anio": 1998,
+      "genero": "Carreras",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo"
+    },
+    {
+      "id": 20,
+      "titulo": "Wave Race 64",
+      "anio": 1996,
+      "genero": "Carreras",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo"
+    },
+    {
+      "id": 21,
+      "titulo": "1080° Snowboarding",
+      "anio": 1998,
+      "genero": "Deportes",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo"
+    },
+    {
+      "id": 22,
+      "titulo": "Kirby 64: The Crystal Shards",
+      "anio": 2000,
+      "genero": "Plataformas",
+      "idioma": "Multi/ES",
+      "desarrollador": "HAL Laboratory"
+    },
+    {
+      "id": 23,
+      "titulo": "Yoshi's Story",
+      "anio": 1997,
+      "genero": "Plataformas",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo"
+    },
+    {
+      "id": 24,
+      "titulo": "Bomberman 64",
+      "anio": 1997,
+      "genero": "Acción",
+      "idioma": "Multi/ES",
+      "desarrollador": "Hudson Soft"
+    },
+    {
+      "id": 25,
+      "titulo": "Sin and Punishment",
+      "anio": 2000,
+      "genero": "Disparos",
+      "idioma": "JP",
+      "desarrollador": "Treasure"
+    },
+    {
+      "id": 26,
+      "titulo": "Turok: Dinosaur Hunter",
+      "anio": 1997,
+      "genero": "Disparos",
+      "idioma": "Multi/ES",
+      "desarrollador": "Iguana Entertainment"
+    },
+    {
+      "id": 27,
+      "titulo": "Turok 2: Seeds of Evil",
+      "anio": 1998,
+      "genero": "Disparos",
+      "idioma": "Multi/ES",
+      "desarrollador": "Iguana Entertainment"
+    },
+    {
+      "id": 28,
+      "titulo": "Jet Force Gemini",
+      "anio": 1999,
+      "genero": "Disparos",
+      "idioma": "Multi/ES",
+      "desarrollador": "Rare"
+    },
+    {
+      "id": 29,
+      "titulo": "Rayman 2: The Great Escape",
+      "anio": 1999,
+      "genero": "Plataformas 3D",
+      "idioma": "Multi/ES",
+      "desarrollador": "Ubisoft"
+    },
+    {
+      "id": 30,
+      "titulo": "Star Wars: Rogue Squadron",
+      "anio": 1998,
+      "genero": "Acción",
+      "idioma": "Multi/ES",
+      "desarrollador": "Factor 5"
+    },
+    {
+      "id": 31,
+      "titulo": "Star Wars: Shadows of the Empire",
+      "anio": 1996,
+      "genero": "Acción",
+      "idioma": "Multi/ES",
+      "desarrollador": "LucasArts"
+    },
+    {
+      "id": 32,
+      "titulo": "Resident Evil 2",
+      "anio": 1999,
+      "genero": "Survival Horror",
+      "idioma": "Multi/ES",
+      "desarrollador": "Capcom"
+    },
+    {
+      "id": 33,
+      "titulo": "WWF No Mercy",
+      "anio": 2000,
+      "genero": "Lucha",
+      "idioma": "Multi/ES",
+      "desarrollador": "AKI Corporation"
+    },
+    {
+      "id": 34,
+      "titulo": "Super Smash Bros.",
+      "anio": 1999,
+      "genero": "Lucha",
+      "idioma": "Multi/ES",
+      "desarrollador": "HAL Laboratory"
+    },
+    {
+      "id": 35,
+      "titulo": "Killer Instinct Gold",
+      "anio": 1996,
+      "genero": "Lucha",
+      "idioma": "Multi/ES",
+      "desarrollador": "Rare"
+    },
+    {
+      "id": 36,
+      "titulo": "Pokémon Snap",
+      "anio": 1999,
+      "genero": "Simulador",
+      "idioma": "Multi/ES",
+      "desarrollador": "HAL Laboratory"
+    },
+    {
+      "id": 37,
+      "titulo": "Harvest Moon 64",
+      "anio": 1999,
+      "genero": "Simulador",
+      "idioma": "Multi/ES",
+      "desarrollador": "Victor Interactive"
+    },
+    {
+      "id": 38,
+      "titulo": "Animal Forest",
+      "anio": 2001,
+      "genero": "Simulador",
+      "idioma": "JP",
+      "desarrollador": "Nintendo"
+    },
+    {
+      "id": 39,
+      "titulo": "Ogre Battle 64",
+      "anio": 1999,
+      "genero": "Estrategia",
+      "idioma": "Multi/ES",
+      "desarrollador": "Quest"
+    },
+    {
+      "id": 40,
+      "titulo": "Mario Tennis",
+      "anio": 2000,
+      "genero": "Deportes",
+      "idioma": "Multi/ES",
+      "desarrollador": "Camelot"
+    },
+    {
+      "id": 41,
+      "titulo": "Mario Golf",
+      "anio": 1999,
+      "genero": "Deportes",
+      "idioma": "Multi/ES",
+      "desarrollador": "Camelot"
+    },
+    {
+      "id": 42,
+      "titulo": "Excitebike 64",
+      "anio": 2000,
+      "genero": "Carreras",
+      "idioma": "Multi/ES",
+      "desarrollador": "Left Field Productions"
+    },
+    {
+      "id": 43,
+      "titulo": "Pilotwings 64",
+      "anio": 1996,
+      "genero": "Simulador",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo"
+    },
+    {
+      "id": 44,
+      "titulo": "Blast Corps",
+      "anio": 1997,
+      "genero": "Acción",
+      "idioma": "Multi/ES",
+      "desarrollador": "Rare"
+    },
+    {
+      "id": 45,
+      "titulo": "Mystical Ninja Starring Goemon",
+      "anio": 1997,
+      "genero": "Aventura",
+      "idioma": "Multi/ES",
+      "desarrollador": "Konami"
+    },
+    {
+      "id": 46,
+      "titulo": "Space Station Silicon Valley",
+      "anio": 1998,
+      "genero": "Plataformas",
+      "idioma": "Multi/ES",
+      "desarrollador": "DMA Design"
+    },
+    {
+      "id": 47,
+      "titulo": "Mischief Makers",
+      "anio": 1997,
+      "genero": "Plataformas",
+      "idioma": "Multi/ES",
+      "desarrollador": "Treasure"
+    },
+    {
+      "id": 48,
+      "titulo": "Body Harvest",
+      "anio": 1998,
+      "genero": "Acción",
+      "idioma": "Multi/ES",
+      "desarrollador": "DMA Design"
+    },
+    {
+      "id": 49,
+      "titulo": "Extreme-G",
+      "anio": 1997,
+      "genero": "Carreras",
+      "idioma": "Multi/ES",
+      "desarrollador": "Probe Entertainment"
+    },
+    {
+      "id": 50,
+      "titulo": "Vigilante 8",
+      "anio": 1999,
+      "genero": "Acción/Conducción",
+      "idioma": "Multi/ES",
+      "desarrollador": "Luxoflux"
+    }
+  ]
+}

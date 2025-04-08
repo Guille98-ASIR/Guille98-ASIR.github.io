@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Juegos Nintendo 64</title>
+    <link rel="stylesheet" href="css-preloader-n64.css">
+    <link rel="icon" href="n64-favicon-svg.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="n64-console">
+            <div class="console-base"></div>
+            <div class="controller-port"></div>
+            <div class="controller-port"></div>
+            <div class="power-light"></div>
+            <div class="cartridge">
+                <div class="cart-label"></div>
+            </div>
+        </div>
+        <div class="loading-text">
+            Loading<span class="loading-dots">...</span>
+        </div>
+    </div>
+
+    <div class="contenedor-central">
+        <header>
+            <div class="logo-container">
+                <h1>NINTENDO 64</h1>
+                <div class="n64-color-dots">
+                    <div class="color-dot dot-red"></div>
+                    <div class="color-dot dot-blue"></div>
+                    <div class="color-dot dot-green"></div>
+                    <div class="color-dot dot-yellow"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Buscador y controles -->
+        <div class="controles">
+            <input type="text" id="buscador" placeholder="Buscar por título, género o desarrollador...">
+            <select id="filas-pagina">
+                <option value="5">5 por página</option>
+                <option value="10" selected>10 por página</option>
+                <option value="20">20 por página</option>
+                <option value="0">Todos</option>
+            </select>
+        </div>
+
+        <!-- Tabla principal -->
+        <table id="tabla-juegos">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Año</th>
+                    <th>Género</th>
+                    <th>Desarrollador</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- Contenedor para la ficha del juego -->
+        <div id="ficha-juego">
+            <h2></h2>
+            <p><strong>Año:</strong> <span id="ficha-anio"></span></p>
+            <p><strong>Género:</strong> <span id="ficha-genero"></span></p>
+            <p><strong>Idioma:</strong> <span id="ficha-idioma"></span></p>
+            <p><strong>Desarrollador:</strong> <span id="ficha-desarrollador"></span></p>
+        </div>
+
+        <!-- Paginación -->
+        <nav id="paginacion">
+            <button id="prev">&laquo; Anterior</button>
+            <span id="contador-pagina">Página 1 de 1</span>
+            <button id="next">Siguiente &raquo;</button>
+        </nav>
+    </div>
+
+    <script src="js-preloader-n64.js"></script>
+</body>
+</html>
