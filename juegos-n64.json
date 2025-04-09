@@ -384,21 +384,21 @@
       "idioma": "Multi/ES",
       "desarrollador": "DMA Design"
     },
-      {
-  "id": 49,
-  "titulo": "Extreme-G",
-  "anio": 1997,
-  "genero": "Carreras",
-  "idioma": "Multi/ES",
-  "desarrollador": "Probe Entertainment"
-},
-{
-  "id": 50,
-  "titulo": "Vigilante 8",
-  "anio": 1999,
-  "genero": "Acción/Conducción",
-  "idioma": "Multi/ES",
-  "desarrollador": "Luxoflux"
-}
+    {
+      "id": 49,
+      "titulo": "Extreme-G",
+      "anio": 1997,
+      "genero": "Carreras",
+      "idioma": "Multi/ES",
+      "desarrollador": "Probe Entertainment"
+    },
+    {
+      "id": 50,
+      "titulo": "Vigilante 8",
+      "anio": 1999,
+      "genero": "Acción/Conducción",
+      "idioma": "Multi/ES",
+      "desarrollador": "Luxoflux"
+    }
   ]
 }
