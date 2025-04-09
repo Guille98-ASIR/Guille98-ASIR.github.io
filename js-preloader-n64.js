@@ -162,20 +162,20 @@ document.addEventListener('DOMContentLoaded', () => {
         return filasPorPagina === 0 ? 1 : Math.ceil(juegosFiltrados.length / filasPorPagina);
     }
 
-    function mostrarFichaJuego(juego) {
-        const fichaJuego = document.getElementById('ficha-juego');
-        fichaJuego.style.display = 'block';
-        fichaJuego.querySelector('h2').textContent = juego.titulo;
-        document.getElementById('ficha-anio').textContent = juego.anio;
-        document.getElementById('ficha-genero').textContent = juego.genero;
-        document.getElementById('ficha-idioma').textContent = juego.idioma;
-        document.getElementById('ficha-desarrollador').textContent = juego.desarrollador;
-        
-        // Añadir un timestamp aleatorio como parámetro de consulta para evitar la caché
-        const timestamp = new Date().getTime();
-        document.getElementById('gif-juego').src = `/img/${juego.id}.gif=${timestamp}`;
-        
-        // Hacer scroll suave hacia la ficha
-        fichaJuego.scrollIntoView({ behavior: 'smooth' });
-    }
+   function mostrarFichaJuego(juego) {
+    const fichaJuego = document.getElementById('ficha-juego');
+    fichaJuego.style.display = 'block';
+    fichaJuego.querySelector('h2').textContent = juego.titulo;
+    document.getElementById('ficha-anio').textContent = juego.anio;
+    document.getElementById('ficha-genero').textContent = juego.genero;
+    document.getElementById('ficha-idioma').textContent = juego.idioma;
+    document.getElementById('ficha-desarrollador').textContent = juego.desarrollador;
+    
+    // Cargar GIF según el juego seleccionado
+    // Esto asume que tienes GIFs con nombres que corresponden a los IDs de los juegos
+    document.getElementById('gif-juego').src = `img/juego-${juego.id}.gif`;
+    
+    // Hacer scroll suave hacia la ficha
+    fichaJuego.scrollIntoView({ behavior: 'smooth' });
+}
 });
