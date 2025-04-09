@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Cargar GIF según el juego seleccionado
     // Esto asume que tienes GIFs con nombres que corresponden a los IDs de los juegos
-    document.getElementById('gif-juego').src = `img/juego-${juego.id}.gif`;
+    document.getElementById('gif-juego').src = `/img/${juego.id}.gif`;
     
     // Hacer scroll suave hacia la ficha
     fichaJuego.scrollIntoView({ behavior: 'smooth' });
