@@ -3,80 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo Completo de Juegos Nintendo 64 - Clásicos N64</title>
-    <meta name="description" content="Explora el catálogo definitivo de juegos de Nintendo 64. Información detallada sobre todos los títulos, años de lanzamiento, géneros y desarrolladores.">
-    <meta name="keywords" content="Nintendo 64, N64, juegos N64, catálogo Nintendo 64, juegos retro, consolas clásicas">
-    <meta name="author" content="Tu Nombre o Sitio Web">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph para compartir en redes sociales -->
-    <meta property="og:title" content="Catálogo Completo de Juegos Nintendo 64">
-    <meta property="og:description" content="Encuentra todos los juegos clásicos de Nintendo 64 con información detallada, filtros y búsqueda avanzada.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tudominio.com/catalogo-n64">
-    <meta property="og:image" content="https://tudominio.com/img/n64-social-preview.jpg">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Catálogo Completo de Juegos Nintendo 64">
-    <meta name="twitter:description" content="Biblioteca definitiva de juegos de N64 con información completa sobre cada título.">
-    <meta name="twitter:image" content="https://tudominio.com/img/n64-social-preview.jpg">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://tudominio.com/catalogo-n64">
-    
-    <!-- Preload recursos críticos -->
-    <link rel="preload" href="css-preloader-n64.css" as="style">
-    <link rel="preload" href="js-preloader-n64.js" as="script">
-    
+    <title>Catálogo de Juegos Nintendo 64</title>
     <link rel="stylesheet" href="css-preloader-n64.css">
     <link rel="icon" href="/img/n64-favicon.ico" type="image/x-icon">
-    
-    <!-- Structured Data / Schema.org -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Catálogo de Juegos Nintendo 64",
-      "description": "Directorio completo de juegos de Nintendo 64 con información detallada sobre cada título.",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Tu Sitio de Juegos Retro",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://tudominio.com/img/logo.png"
-        }
-      },
-      "mainEntity": {
-        "@type": "ItemList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Super Mario 64",
-            "url": "https://tudominio.com/catalogo-n64/super-mario-64"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "The Legend of Zelda: Ocarina of Time",
-            "url": "https://tudominio.com/catalogo-n64/zelda-ocarina-of-time"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "GoldenEye 007",
-            "url": "https://tudominio.com/catalogo-n64/goldeneye-007"
-          }
-        ]
-      }
-    }
-    </script>
 </head>
 <body>
     <!-- Preloader -->
-    <div id="preloader" aria-label="Cargando página">
-        <div class="n64-console" role="presentation">
+    <div id="preloader">
+        <div class="n64-console">
             <div class="console-base"></div>
             <div class="controller-port"></div>
             <div class="controller-port"></div>
@@ -89,115 +23,67 @@
             Loading<span class="loading-dots">...</span>
         </div>
     </div>
-    
+
     <div class="contenedor-central">
         <header>
             <div class="logo-container">
                 <h1>NINTENDO 64</h1>
-                <div class="n64-color-dots" aria-hidden="true">
+                <div class="n64-color-dots">
                     <div class="color-dot dot-red"></div>
                     <div class="color-dot dot-blue"></div>
                     <div class="color-dot dot-green"></div>
                     <div class="color-dot dot-yellow"></div>
                 </div>
             </div>
-        
-        <!-- Breve introducción para SEO -->
-        <section class="intro">
-            <p>Explora la biblioteca completa de juegos lanzados para Nintendo 64, la revolucionaria consola de 64 bits que debutó en 1996. Navega por más de 300 títulos que definieron una era con clásicos como Super Mario 64, The Legend of Zelda: Ocarina of Time y GoldenEye 007.</p>
-        </section>
-        
+        </header>
+
         <!-- Buscador y controles -->
         <div class="controles">
-            <label for="buscador" class="sr-only">Buscar juegos:</label>
-            <input type="text" id="buscador" placeholder="Buscar por título, género o desarrollador..." aria-label="Buscar juegos de Nintendo 64">
-            
-            <label for="filas-pagina">Mostrar:</label>
-            <select id="filas-pagina" aria-label="Seleccionar número de juegos por página">
+            <input type="text" id="buscador" placeholder="Buscar por título, género o desarrollador...">
+            <select id="filas-pagina">
                 <option value="5">5 por página</option>
                 <option value="10" selected>10 por página</option>
                 <option value="20">20 por página</option>
                 <option value="0">Todos</option>
             </select>
-            
-            <!-- Botón para cambiar de modo -->
-            <button id="modo-toggle" title="Cambiar modo claro/oscuro" aria-label="Cambiar entre modo claro y oscuro">🌙</button>
+            <!-- Nuevo botón para cambiar de modo -->
+            <button id="modo-toggle" title="Cambiar modo claro/oscuro">🌙</button>
         </div>
-        
+
         <!-- Tabla principal -->
-        <table id="tabla-juegos" aria-label="Catálogo de juegos de Nintendo 64">
-            <caption class="sr-only">Lista de juegos de Nintendo 64 con información detallada</caption>
+        <table id="tabla-juegos">
             <thead>
                 <tr>
-                    <th scope="col">Título</th>
-                    <th scope="col">Año</th>
-                    <th scope="col">Género</th>
-                    <th scope="col">Desarrollador</th>
+                    <th>Título</th>
+                    <th>Año</th>
+                    <th>Género</th>
+                    <th>Desarrollador</th>
                 </tr>
             </thead>
             <tbody></tbody>
         </table>
-        
+
         <!-- Contenedor para la ficha del juego -->
-        <div id="ficha-juego" aria-live="polite">
+        <div id="ficha-juego">
             <h2></h2>
             <p><strong>Año:</strong> <span id="ficha-anio"></span></p>
             <p><strong>Género:</strong> <span id="ficha-genero"></span></p>
             <p><strong>Idioma:</strong> <span id="ficha-idioma"></span></p>
             <p><strong>Desarrollador:</strong> <span id="ficha-desarrollador"></span></p>
-            
-            <!-- Contenedor para el GIF -->
-            <figure class="gif-container">
-                <img id="gif-juego" src="" alt="Gameplay del juego" loading="lazy">
-                <figcaption id="gif-caption">Gameplay de <span class="game-title"></span></figcaption>
-            </figure>
+            <!-- Añadir contenedor para el GIF -->
+            <div class="gif-container">
+                <img id="gif-juego" src="" alt="Gameplay del juego">
+            </div>
         </div>
-        
+
         <!-- Paginación -->
-        <nav id="paginacion" aria-label="Paginación del catálogo">
-            <button id="prev" aria-label="Página anterior">&laquo; Anterior</button>
-            <span id="contador-pagina" aria-live="polite">Página 1 de 1</span>
-            <button id="next" aria-label="Página siguiente">Siguiente &raquo;</button>
+        <nav id="paginacion">
+            <button id="prev">&laquo; Anterior</button>
+            <span id="contador-pagina">Página 1 de 1</span>
+            <button id="next">Siguiente &raquo;</button>
         </nav>
-        
-        <!-- Sección de juegos populares para SEO -->
-        <section class="juegos-populares">
-            <h2>Juegos Más Populares de Nintendo 64</h2>
-            <ul>
-                <li><a href="/juegos/super-mario-64">Super Mario 64</a> - El revolucionario juego 3D que definió la consola</li>
-                <li><a href="/juegos/zelda-ocarina-of-time">The Legend of Zelda: Ocarina of Time</a> - Una aventura épica considerada uno de los mejores juegos de todos los tiempos</li>
-                <li><a href="/juegos/mario-kart-64">Mario Kart 64</a> - Carreras multijugador que marcaron una generación</li>
-                <li><a href="/juegos/goldeneye-007">GoldenEye 007</a> - El shooter en primera persona que revolucionó el género en consolas</li>
-                <li><a href="/juegos/perfect-dark">Perfect Dark</a> - El sucesor espiritual de GoldenEye con mecánicas avanzadas</li>
-            </ul>
-        </section>
-        
-        <!-- FAQ para SEO -->
-        <section class="faq">
-            <h2>Preguntas Frecuentes sobre Nintendo 64</h2>
-            <details>
-                <summary>¿Cuántos juegos se lanzaron para Nintendo 64?</summary>
-                <p>Nintendo 64 cuenta con una biblioteca de aproximadamente 388 juegos lanzados oficialmente en todo el mundo, con 296 títulos en América del Norte, 242 en Europa y 197 en Japón.</p>
-            </details>
-            <details>
-                <summary>¿Cuál es el juego más vendido de Nintendo 64?</summary>
-                <p>Super Mario 64 es el juego más vendido de la consola con más de 11 millones de copias vendidas en todo el mundo.</p>
-            </details>
-            <details>
-                <summary>¿Cuándo se lanzó Nintendo 64?</summary>
-                <p>Nintendo 64 se lanzó el 23 de junio de 1996 en Japón, el 29 de septiembre de 1996 en Norteamérica y el 1 de marzo de 1997 en Europa.</p>
-            </details>
-        </section>
     </div>
-    
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Catálogo Nintendo 64. Todos los derechos reservados.</p>
-            <p>Nintendo 64 y todos los juegos asociados son marcas registradas de Nintendo Co., Ltd.</p>
-            <p>Este sitio no está afiliado con Nintendo y es solo para fines informativos.</p>
-        </div>
-    </footer>
-    
-    <script src="js-preloader-n64.js" defer></script>
+
+    <script src="js-preloader-n64.js"></script>
 </body>
 </html>
