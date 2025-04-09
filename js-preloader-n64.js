@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Añadir un timestamp aleatorio como parámetro de consulta para evitar la caché
         const timestamp = new Date().getTime();
-        document.getElementById('gif-juego').src = `img/${juego.id}.gif=${timestamp}`;
+        document.getElementById('gif-juego').src = `/img/${juego.id}.gif=${timestamp}`;
         
         // Hacer scroll suave hacia la ficha
         fichaJuego.scrollIntoView({ behavior: 'smooth' });
