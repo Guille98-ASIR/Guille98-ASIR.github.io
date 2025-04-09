@@ -179,6 +179,7 @@ body {
 
 header {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 20px;
@@ -186,11 +187,61 @@ header {
 }
 
 h1 {
-    color: var(--nintendo-red);
+    color: white;
     text-align: center;
     margin: 20px 0;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
+}
+
+h2 {
+    color: var(--nintendo-red);
+    margin: 25px 0 15px;
+    border-bottom: 2px solid var(--nintendo-yellow);
+    padding-bottom: 8px;
+}
+
+/* Breadcrumbs para SEO */
+.breadcrumb {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    font-size: 0.9rem;
+}
+
+.breadcrumb li {
+    display: inline;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: "›";
+    margin: 0 8px;
+    color: var(--nintendo-gray);
+}
+
+.breadcrumb a {
+    color: var(--nintendo-blue);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb li[aria-current="page"] {
+    color: var(--nintendo-black);
+    font-weight: 500;
+}
+
+/* Sección de introducción */
+.intro {
+    margin-bottom: 25px;
+    line-height: 1.6;
+    background-color: var(--nintendo-light-blue);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid var(--nintendo-blue);
 }
 
 /* Tabla con estilo Nintendo */
@@ -201,6 +252,18 @@ h1 {
     margin: 20px auto;
     border: 2px solid var(--nintendo-dark-blue);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+caption.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 th {
@@ -231,6 +294,7 @@ tr:hover {
     justify-content: space-between;
     margin: 20px 0;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 #buscador {
@@ -253,6 +317,18 @@ tr:hover {
     cursor: pointer;
 }
 
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
 /* Paginación con estilo Nintendo */
 #paginacion {
     display: flex;
@@ -260,6 +336,7 @@ tr:hover {
     gap: 15px;
     margin: 20px 0;
     padding: 15px;
+    align-items: center;
 }
 
 #paginacion button {
@@ -347,6 +424,7 @@ tr:hover {
 .dot-yellow {
     background-color: var(--nintendo-yellow);
 }
+
 /* Estilos para el GIF */
 .gif-container {
     margin-top: 20px;
@@ -359,6 +437,12 @@ tr:hover {
     max-height: 300px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+figcaption {
+    margin-top: 8px;
+    font-style: italic;
+    color: var(--nintendo-charcoal);
 }
 
 /* Botón de cambio de modo */
@@ -379,6 +463,87 @@ tr:hover {
 
 #modo-toggle:hover {
     background-color: var(--nintendo-blue);
+}
+
+/* Sección de juegos populares */
+.juegos-populares {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: var(--nintendo-bg);
+    border-radius: 10px;
+    border-left: 4px solid var(--nintendo-green);
+}
+
+.juegos-populares ul {
+    padding-left: 20px;
+}
+
+.juegos-populares li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.juegos-populares a {
+    color: var(--nintendo-blue);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.juegos-populares a:hover {
+    text-decoration: underline;
+}
+
+/* Sección de FAQ */
+.faq {
+    margin: 30px 0;
+}
+
+details {
+    margin-bottom: 15px;
+    border: 1px solid var(--nintendo-gray);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+summary {
+    padding: 15px;
+    background-color: var(--nintendo-light-blue);
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+summary::-webkit-details-marker {
+    margin-right: 10px;
+    color: var(--nintendo-blue);
+}
+
+details[open] summary {
+    border-bottom: 1px solid var(--nintendo-gray);
+}
+
+details p {
+    padding: 15px;
+    margin: 0;
+    background-color: white;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--nintendo-dark-blue);
+    color: white;
+    border-radius: 0 0 15px 15px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-content p {
+    margin: 5px 0;
 }
 
 /* Estilos para modo oscuro */
@@ -423,7 +588,70 @@ body.modo-oscuro #ficha-juego {
     border-color: var(--nintendo-blue);
 }
 
+body.modo-oscuro .intro {
+    background-color: var(--nintendo-dark-blue);
+    color: var(--nintendo-gray);
+}
+
+body.modo-oscuro .juegos-populares {
+    background-color: var(--nintendo-charcoal);
+}
+
+body.modo-oscuro .juegos-populares a {
+    color: var(--nintendo-light-blue);
+}
+
+body.modo-oscuro details {
+    border-color: var(--nintendo-dark-blue);
+}
+
+body.modo-oscuro summary {
+    background-color: var(--nintendo-dark-blue);
+    color: var(--nintendo-gray);
+}
+
+body.modo-oscuro details p {
+    background-color: var(--nintendo-black);
+    color: var(--nintendo-gray);
+}
+
+body.modo-oscuro figcaption {
+    color: var(--nintendo-gray);
+}
+
+body.modo-oscuro .breadcrumb li[aria-current="page"] {
+    color: var(--nintendo-gray);
+}
+
 body.modo-oscuro #modo-toggle {
     background-color: var(--nintendo-yellow);
     color: var(--nintendo-black);
+}
+
+/* Media queries para responsive */
+@media screen and (max-width: 768px) {
+    .contenedor-central {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .controles {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    #buscador {
+        max-width: 100%;
+    }
+    
+    #paginacion {
+        flex-wrap: wrap;
+    }
+    
+    th, td {
+        padding: 10px 8px;
+    }
 }
