@@ -1,178 +1,404 @@
-document.addEventListener('DOMContentLoaded', () => {
-    let juegosOriginales = [];
-    let juegosFiltrados = [];
-    let paginaActual = 1;
-    let filasPorPagina = 10;
-    let modoOscuro = localStorage.getItem('modoOscuro') === 'true';
-
-    const elementos = {
-        tabla: document.querySelector('#tabla-juegos tbody'),
-        buscador: document.getElementById('buscador'),
-        filasPagina: document.getElementById('filas-pagina'),
-        paginacion: document.getElementById('paginacion'),
-        prevBtn: document.getElementById('prev'),
-        nextBtn: document.getElementById('next'),
-        contador: document.getElementById('contador-pagina'),
-        fichaJuego: document.getElementById('ficha-juego'),
-        preloader: document.getElementById('preloader'),
-        modoToggle: document.getElementById('modo-toggle')
-    };
-
-    // Inicializar el modo oscuro si estaba activo
-    if (modoOscuro) {
-        document.body.classList.add('modo-oscuro');
-        elementos.modoToggle.textContent = '☀️';
-    }
-
-    // Evento para cambiar entre modo claro y oscuro
-    elementos.modoToggle.addEventListener('click', () => {
-        document.body.classList.toggle('modo-oscuro');
-        modoOscuro = document.body.classList.contains('modo-oscuro');
-        localStorage.setItem('modoOscuro', modoOscuro);
-        elementos.modoToggle.textContent = modoOscuro ? '☀️' : '🌙';
-    });
-
-    // Simular tiempo de carga para el preloader
-    setTimeout(() => {
-        cargarJuegos();
-    }, 2500); // Mostrar el preloader por 2.5 segundos
-
-    // Cargar datos iniciales
-    function cargarJuegos() {
-        fetch('juegos-n64.json')
-            .then(response => response.json())
-            .then(data => {
-                juegosOriginales = data.juegos;
-                juegosFiltrados = [...juegosOriginales];
-                renderTabla();
-                
-                // Ocultar preloader con una transición suave
-                setTimeout(() => {
-                    elementos.preloader.style.opacity = '0';
-                    setTimeout(() => {
-                        elementos.preloader.style.display = 'none';
-                    }, 500);
-                }, 500);
-            })
-            .catch(error => {
-                console.error('Error al cargar el JSON:', error);
-                // Ocultar preloader incluso si hay error
-                elementos.preloader.style.opacity = '0';
-                setTimeout(() => {
-                    elementos.preloader.style.display = 'none';
-                }, 500);
-            });
-    }
-
-    // Sistema de búsqueda
-    elementos.buscador.addEventListener('input', () => {
-        paginaActual = 1;
-        filtrarJuegos();
-        renderTabla();
-        // Ocultar ficha de juego al buscar
-        elementos.fichaJuego.style.display = 'none';
-    });
-
-    // Cambiar número de filas
-    elementos.filasPagina.addEventListener('change', (e) => {
-        filasPorPagina = parseInt(e.target.value);
-        paginaActual = 1;
-        renderTabla();
-        // Ocultar ficha de juego al cambiar el número de filas
-        elementos.fichaJuego.style.display = 'none';
-    });
-
-    // Paginación
-    elementos.prevBtn.addEventListener('click', () => {
-        if(paginaActual > 1) {
-            paginaActual--;
-            renderTabla();
-            // Ocultar ficha de juego al cambiar de página
-            elementos.fichaJuego.style.display = 'none';
-        }
-    });
-
-    elementos.nextBtn.addEventListener('click', () => {
-        if(paginaActual < totalPaginas()) {
-            paginaActual++;
-            renderTabla();
-            // Ocultar ficha de juego al cambiar de página
-            elementos.fichaJuego.style.display = 'none';
-        }
-    });
-
-    // Funciones principales
-    function filtrarJuegos() {
-        const termino = elementos.buscador.value.toLowerCase();
-        juegosFiltrados = juegosOriginales.filter(juego => {
-            return Object.values(juego).some(valor => 
-                String(valor).toLowerCase().includes(termino)
-            );
-        });
-    }
-
-    function renderTabla() {
-        elementos.tabla.innerHTML = '';
-        
-        const inicio = (paginaActual - 1) * filasPorPagina;
-        const fin = filasPorPagina === 0 ? juegosFiltrados.length : inicio + filasPorPagina;
-        const paginados = juegosFiltrados.slice(inicio, fin);
-
-        paginados.forEach(juego => {
-            const fila = elementos.tabla.insertRow();
-            fila.style.cursor = 'pointer';
-
-            // Crear celdas para cada valor excepto ID
-            const celdaTitulo = fila.insertCell();
-            celdaTitulo.textContent = juego.titulo;
-            
-            const celdaAnio = fila.insertCell();
-            celdaAnio.textContent = juego.anio;
-            
-            const celdaGenero = fila.insertCell();
-            celdaGenero.textContent = juego.genero;
-            
-            const celdaDesarrollador = fila.insertCell();
-            celdaDesarrollador.textContent = juego.desarrollador;
-
-            // Añadir evento de clic a toda la fila
-            fila.addEventListener('click', () => {
-                mostrarFichaJuego(juego);
-            });
-        });
-
-        actualizarPaginacion();
-    }
-
-    function actualizarPaginacion() {
-        const totalPag = totalPaginas();
-        elementos.contador.textContent = `Página ${paginaActual} de ${totalPag}`;
-
-        elementos.prevBtn.disabled = paginaActual === 1;
-        elementos.nextBtn.disabled = paginaActual === totalPag;
-
-        elementos.paginacion.style.display = filasPorPagina === 0 ? 'none' : 'flex';
-    }
-
-    function totalPaginas() {
-        return filasPorPagina === 0 ? 1 : Math.ceil(juegosFiltrados.length / filasPorPagina);
-    }
-
-    // Uso exactamente la función que prefieres para mostrar la ficha del juego
-    function mostrarFichaJuego(juego) {
-        const fichaJuego = document.getElementById('ficha-juego');
-        fichaJuego.style.display = 'block';
-        fichaJuego.querySelector('h2').textContent = juego.titulo;
-        document.getElementById('ficha-anio').textContent = juego.anio;
-        document.getElementById('ficha-genero').textContent = juego.genero;
-        document.getElementById('ficha-idioma').textContent = juego.idioma;
-        document.getElementById('ficha-desarrollador').textContent = juego.desarrollador;
-        
-        // Cargar GIF según el juego seleccionado
-        // Esto asume que tienes GIFs con nombres que corresponden a los IDs de los juegos
-        document.getElementById('gif-juego').src = `img/${juego.id}.gif`;
-        
-        // Hacer scroll suave hacia la ficha
-        fichaJuego.scrollIntoView({ behavior: 'smooth' });
-    }
-});
+{
+  "juegos": [
+    {
+      "id": 1,
+      "titulo": "Super Mario 64",
+      "anio": 1996,
+      "genero": "Plataformas 3D",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo"
+    },
+    {
+      "id": 2,
+      "titulo": "The Legend of Zelda: Ocarina of Time",
+      "anio": 1998,
+      "genero": "Aventura",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo"
+    },
+    {
+      "id": 3,
+      "titulo": "Mario Kart 64",
+      "anio": 1996,
+      "genero": "Carreras",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo"
+    },
+    {
+      "id": 4,
+      "titulo": "GoldenEye 007",
+      "anio": 1997,
+      "genero": "Disparos",
+      "idioma": "Multi/ES",
+      "desarrollador": "Rare"
+    },
+    {
+      "id": 5,
+      "titulo": "Banjo-Kazooie",
+      "anio": 1998,
+      "genero": "Plataformas 3D",
+      "idioma": "Multi/ES",
+      "desarrollador": "Rare"
+    },
+    {
+      "id": 6,
+      "titulo": "Diddy Kong Racing",
+      "anio": 1997,
+      "genero": "Carreras",
+      "idioma": "Multi/ES",
+      "desarrollador": "Rare"
+    },
+    {
+      "id": 7,
+      "titulo": "Star Fox 64",
+      "anio": 1997,
+      "genero": "Disparos",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo"
+    },
+    {
+      "id": 8,
+      "titulo": "The Legend of Zelda: Majora's Mask",
+      "anio": 2000,
+      "genero": "Aventura",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo"
+    },
+    {
+      "id": 9,
+      "titulo": "Perfect Dark",
+      "anio": 2000,
+      "genero": "Disparos",
+      "idioma": "Multi/ES",
+      "desarrollador": "Rare"
+    },
+    {
+      "id": 10,
+      "titulo": "Donkey Kong 64",
+      "anio": 1999,
+      "genero": "Plataformas 3D",
+      "idioma": "Multi/ES",
+      "desarrollador": "Rare"
+    },
+    {
+      "id": 11,
+      "titulo": "Banjo-Tooie",
+      "anio": 2000,
+      "genero": "Plataformas 3D",
+      "idioma": "Multi/ES",
+      "desarrollador": "Rare"
+    },
+    {
+      "id": 12,
+      "titulo": "Conker's Bad Fur Day",
+      "anio": 2001,
+      "genero": "Plataformas 3D",
+      "idioma": "Multi/ES",
+      "desarrollador": "Rare"
+    },
+    {
+      "id": 13,
+      "titulo": "Mario Party",
+      "anio": 1998,
+      "genero": "Minijuegos",
+      "idioma": "Multi/ES",
+      "desarrollador": "Hudson Soft"
+    },
+    {
+      "id": 14,
+      "titulo": "Mario Party 2",
+      "anio": 1999,
+      "genero": "Minijuegos",
+      "idioma": "Multi/ES",
+      "desarrollador": "Hudson Soft"
+    },
+    {
+      "id": 15,
+      "titulo": "Mario Party 3",
+      "anio": 2000,
+      "genero": "Minijuegos",
+      "idioma": "Multi/ES",
+      "desarrollador": "Hudson Soft"
+    },
+    {
+      "id": 16,
+      "titulo": "Paper Mario",
+      "anio": 2000,
+      "genero": "RPG",
+      "idioma": "Multi/ES",
+      "desarrollador": "Intelligent Systems"
+    },
+    {
+      "id": 17,
+      "titulo": "Pokémon Stadium",
+      "anio": 1999,
+      "genero": "RPG",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo"
+    },
+    {
+      "id": 18,
+      "titulo": "Pokémon Stadium 2",
+      "anio": 2000,
+      "genero": "RPG",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo"
+    },
+    {
+      "id": 19,
+      "titulo": "F-Zero X",
+      "anio": 1998,
+      "genero": "Carreras",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo"
+    },
+    {
+      "id": 20,
+      "titulo": "Wave Race 64",
+      "anio": 1996,
+      "genero": "Carreras",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo"
+    },
+    {
+      "id": 21,
+      "titulo": "1080° Snowboarding",
+      "anio": 1998,
+      "genero": "Deportes",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo"
+    },
+    {
+      "id": 22,
+      "titulo": "Kirby 64: The Crystal Shards",
+      "anio": 2000,
+      "genero": "Plataformas",
+      "idioma": "Multi/ES",
+      "desarrollador": "HAL Laboratory"
+    },
+    {
+      "id": 23,
+      "titulo": "Yoshi's Story",
+      "anio": 1997,
+      "genero": "Plataformas",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo"
+    },
+    {
+      "id": 24,
+      "titulo": "Bomberman 64",
+      "anio": 1997,
+      "genero": "Acción",
+      "idioma": "Multi/ES",
+      "desarrollador": "Hudson Soft"
+    },
+    {
+      "id": 25,
+      "titulo": "Sin and Punishment",
+      "anio": 2000,
+      "genero": "Disparos",
+      "idioma": "JP",
+      "desarrollador": "Treasure"
+    },
+    {
+      "id": 26,
+      "titulo": "Turok: Dinosaur Hunter",
+      "anio": 1997,
+      "genero": "Disparos",
+      "idioma": "Multi/ES",
+      "desarrollador": "Iguana Entertainment"
+    },
+    {
+      "id": 27,
+      "titulo": "Turok 2: Seeds of Evil",
+      "anio": 1998,
+      "genero": "Disparos",
+      "idioma": "Multi/ES",
+      "desarrollador": "Iguana Entertainment"
+    },
+    {
+      "id": 28,
+      "titulo": "Jet Force Gemini",
+      "anio": 1999,
+      "genero": "Disparos",
+      "idioma": "Multi/ES",
+      "desarrollador": "Rare"
+    },
+    {
+      "id": 29,
+      "titulo": "Rayman 2: The Great Escape",
+      "anio": 1999,
+      "genero": "Plataformas 3D",
+      "idioma": "Multi/ES",
+      "desarrollador": "Ubisoft"
+    },
+    {
+      "id": 30,
+      "titulo": "Star Wars: Rogue Squadron",
+      "anio": 1998,
+      "genero": "Acción",
+      "idioma": "Multi/ES",
+      "desarrollador": "Factor 5"
+    },
+    {
+      "id": 31,
+      "titulo": "Star Wars: Shadows of the Empire",
+      "anio": 1996,
+      "genero": "Acción",
+      "idioma": "Multi/ES",
+      "desarrollador": "LucasArts"
+    },
+    {
+      "id": 32,
+      "titulo": "Resident Evil 2",
+      "anio": 1999,
+      "genero": "Survival Horror",
+      "idioma": "Multi/ES",
+      "desarrollador": "Capcom"
+    },
+    {
+      "id": 33,
+      "titulo": "WWF No Mercy",
+      "anio": 2000,
+      "genero": "Lucha",
+      "idioma": "Multi/ES",
+      "desarrollador": "AKI Corporation"
+    },
+    {
+      "id": 34,
+      "titulo": "Super Smash Bros.",
+      "anio": 1999,
+      "genero": "Lucha",
+      "idioma": "Multi/ES",
+      "desarrollador": "HAL Laboratory"
+    },
+    {
+      "id": 35,
+      "titulo": "Killer Instinct Gold",
+      "anio": 1996,
+      "genero": "Lucha",
+      "idioma": "Multi/ES",
+      "desarrollador": "Rare"
+    },
+    {
+      "id": 36,
+      "titulo": "Pokémon Snap",
+      "anio": 1999,
+      "genero": "Simulador",
+      "idioma": "Multi/ES",
+      "desarrollador": "HAL Laboratory"
+    },
+    {
+      "id": 37,
+      "titulo": "Harvest Moon 64",
+      "anio": 1999,
+      "genero": "Simulador",
+      "idioma": "Multi/ES",
+      "desarrollador": "Victor Interactive"
+    },
+    {
+      "id": 38,
+      "titulo": "Animal Forest",
+      "anio": 2001,
+      "genero": "Simulador",
+      "idioma": "JP",
+      "desarrollador": "Nintendo"
+    },
+    {
+      "id": 39,
+      "titulo": "Ogre Battle 64",
+      "anio": 1999,
+      "genero": "Estrategia",
+      "idioma": "Multi/ES",
+      "desarrollador": "Quest"
+    },
+    {
+      "id": 40,
+      "titulo": "Mario Tennis",
+      "anio": 2000,
+      "genero": "Deportes",
+      "idioma": "Multi/ES",
+      "desarrollador": "Camelot"
+    },
+    {
+      "id": 41,
+      "titulo": "Mario Golf",
+      "anio": 1999,
+      "genero": "Deportes",
+      "idioma": "Multi/ES",
+      "desarrollador": "Camelot"
+    },
+    {
+      "id": 42,
+      "titulo": "Excitebike 64",
+      "anio": 2000,
+      "genero": "Carreras",
+      "idioma": "Multi/ES",
+      "desarrollador": "Left Field Productions"
+    },
+    {
+      "id": 43,
+      "titulo": "Pilotwings 64",
+      "anio": 1996,
+      "genero": "Simulador",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo"
+    },
+    {
+      "id": 44,
+      "titulo": "Blast Corps",
+      "anio": 1997,
+      "genero": "Acción",
+      "idioma": "Multi/ES",
+      "desarrollador": "Rare"
+    },
+    {
+      "id": 45,
+      "titulo": "Mystical Ninja Starring Goemon",
+      "anio": 1997,
+      "genero": "Aventura",
+      "idioma": "Multi/ES",
+      "desarrollador": "Konami"
+    },
+    {
+      "id": 46,
+      "titulo": "Space Station Silicon Valley",
+      "anio": 1998,
+      "genero": "Plataformas",
+      "idioma": "Multi/ES",
+      "desarrollador": "DMA Design"
+    },
+    {
+      "id": 47,
+      "titulo": "Mischief Makers",
+      "anio": 1997,
+      "genero": "Plataformas",
+      "idioma": "Multi/ES",
+      "desarrollador": "Treasure"
+    },
+    {
+      "id": 48,
+      "titulo": "Body Harvest",
+      "anio": 1998,
+      "genero": "Acción",
+      "idioma": "Multi/ES",
+      "desarrollador": "DMA Design"
+    },
+      {
+  "id": 49,
+  "titulo": "Extreme-G",
+  "anio": 1997,
+  "genero": "Carreras",
+  "idioma": "Multi/ES",
+  "desarrollador": "Probe Entertainment"
+},
+{
+  "id": 50,
+  "titulo": "Vigilante 8",
+  "anio": 1999,
+  "genero": "Acción/Conducción",
+  "idioma": "Multi/ES",
+  "desarrollador": "Luxoflux"
+}
+  ]
+}
